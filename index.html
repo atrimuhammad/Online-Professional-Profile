@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Professional Profile</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>        
+    <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" />
+    <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/dropzone"></script>
+    <script src="https://unpkg.com/cropperjs"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+
+<body onload="Hide_All_Section()">
+    <div class="container">
+        <!-- Add Personal Info. Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Add Modal Content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Personal Details</h4>
+                    </div>
+                
+                    <div class="modal-body">
+                        <form id="personal_information_form">
+                            <div class="container1">
+                                <div>
+                                    <label for="firstname">First Name *</label>
+                                    </br>
+                                    <input type="text" id="firstname" name="firstname" size="35" required>
+                                </div>
+                                <div>
+                                    <label style="margin-left: 5px;" for="lastname">Last Name *</label>
+                                    </br>
+                                    <input style="margin-left: 5px;" type="text" id="lastname" name="lastname" size="35" required>
+                                </div>
+                            </div>
+
+                            <label style="margin-top: 8px;" for="dateofbirth">D.O.B *</label>
+                            </br>
+                            <input type="date" id="dateofbirth" name="dateofbirth" required>
+
+                            </br>
+
+                            <label style="margin-top: 8px;" for="email">Email *</label>
+                            </br>
+                            <input type="email" id="email" name="email" size="76" required>
+
+                            <label style="margin-top: 8px;" for="phone">Phone Number *</label>
+                            <br>
+                            <input type="tel" id="phone" name="phone" placeholder="03xx-xxxxxxx" pattern="[0-9]{4}-[0-9]{7}" size="76" required>
+
+                            <label style="margin-top: 8px;" for="address">Address *</label>
+                            </br>
+                            <input type="text" id="address" name="address" size="76" required>
+                        </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button id="save" data-dismiss="modal" type="submit" style="border-radius: 50px;" onclick="AddDetails(event);" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Edit Personal Info. Modal -->
+        <div class="modal fade" id="myModalEdit" role="dialog">
+            <div class="modal-dialog">
+                <!-- Edit Modal Content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Edit Personal Details</h4>
+                    </div>
+                
+                    <div class="modal-body">
+                        <form id="edit_personal_information_form">
+                            <div class="container1">
+                                <div>
+                                    <label for="firstname">First Name *</label>
+                                    </br>
+                                    <input type="text" id="edit_firstname" name="edit_firstname" size="35" value="" required>
+                                </div>
+                                <div>
+                                    <label style="margin-left: 5px;" for="lastname">Last Name *</label>
+                                    </br>
+                                    <input style="margin-left: 5px;" type="text" id="edit_lastname" name="edit_lastname" size="35" value="" required>
+                                </div>
+                            </div>
+
+                            <label style="margin-top: 8px;" for="dateofbirth">D.O.B *</label>
+                            </br>
+                            <input type="date" id="edit_dateofbirth" name="edit_dateofbirth" value="" required>
+
+                            </br>
+
+                            <label style="margin-top: 8px;" for="email">Email *</label>
+                            </br>
+                            <input type="email" id="edit_email" name="edit_email" size="76" value="" required>
+
+                            <label style="margin-top: 8px;" for="phone">Phone Number *</label>
+                            <br>
+                            <input type="tel" id="edit_phone" name="edit_phone" placeholder="03xx-xxxxxxx" pattern="[0-9]{4}-[0-9]{7}" size="76" value="" required>
+
+                            <label style="margin-top: 8px;" for="address">Address *</label>
+                            </br>
+                            <input type="text" id="edit_address" name="edit_address" size="76" value="" required>
+                        </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button id="save" data-dismiss="modal" type="submit" style="border-radius: 50px;" onclick="EditDetails(event);" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Experience Modal -->
+        <div class="modal fade" id="experienceModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Add Modal Content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Experience</h4>
+                    </div>
+                
+                    <div class="modal-body">
+                        <form id="experience_form">
+                            <label for="title">Title *</label>
+                            </br>
+                            <input type="text" id="title" name="title" size="76" required>
+
+                            <label style="margin-top: 8px;" for="employment_type">Employment Type</label>
+                            </br>
+                            <input list="brow" size="76">
+                            <datalist id="brow" size="76">
+                                <option value="-">
+                                <option value="Full-time">
+                                <option value="Part-time">
+                                <option value="Self-employed">
+                                <option value="Freelance">
+                                <option value="Contract">
+                                <option value="Internship">
+                                <option value="Seasonal">
+                                <option value="Apprenticeship">
+                            </datalist>
+
+                            </br>
+
+                            <label style="margin-top: 8px;" for="company">Company</label>
+                            </br>
+                            <input type="text" id="company" name="company" size="76" required>
+
+                            <label style="margin-top: 8px;" for="location">Location</label>
+                            <br>
+                            <input type="text" id="location" name="location" size="76" required>
+
+                            <label style="margin-top: 8px;" for="startdate">Start Date</label>
+                            <br>
+
+                            <div class="container1">
+                                <div id="job_startmonth" name="job_startmonth">
+                                    <select id="job_startmonth" name="job_startmonth">
+                                        <option>Month</option>
+                                        <option value="January">January</option>
+                                        <option value="February">February</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="June">June</option>
+                                        <option value="July">July</option>
+                                        <option value="August">August</option>
+                                        <option value="September">September</option>
+                                        <option value="October">October</option>
+                                        <option value="November">November</option>
+                                        <option value="December">December</option>
+                                    </select>
+                                </div>
+    
+                                <div id="job_startyear" name="job_startyear" style="margin-left: 5px;">
+                                    <select id="job_startyear" name="job_startyear">
+                                        <option>Year</option>
+                                        <option value="2000">2000</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <label style="margin-top: 8px;" for="enddate">End Date (or expected)</label>
+                        </br>
+                        <div class="container1">
+                            <div id="job_endmonth" name="job_endmonth">
+                                <select id="job_endmonth" name="job_endmonth">
+                                    <option>Month</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+
+                            <div id="job_endyear" name="job_endyear" style="margin-left: 5px;">
+                                <select id="job_endyear" name="job_endyear">
+                                    <option>Year</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button id="save" data-dismiss="modal" type="submit" style="border-radius: 50px;" onclick="AddExperienceInfo(event);" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Skills Modal -->
+        <div class="modal fade" id="skillsModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Add Modal Content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Skills</h4>
+                    </div>
+                
+                    <div class="modal-body">
+                        <form id="skills_form">
+                            <label for="firstname">Skill</label>
+                            </br>
+                            <input type="text" id="skill" name="skill" size="76" required>
+
+                            <label style="margin-top: 8px;" for="proficiency_level">Proficiency Level</label>
+                            </br>
+                            <input list="skills_brow" size="76">
+                            <datalist id="skills_brow" size="76">
+                                <option value="Beginner">
+                                <option value="Intermediate">
+                                <option value="Expert">
+                            </datalist>
+                        </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button id="save" data-dismiss="modal" type="submit" style="border-radius: 50px;" onclick="AddSkills(event);" class="btn btn-primary">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Projects Modal -->
+        <div class="modal fade" id="projectsModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Add Modal Content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Projects</h4>
+                    </div>
+                
+                    <div class="modal-body">
+                        <form id="projects_form">
+                            <label for="project_name">Project Name *</label>
+                            </br>
+                            <input type="text" id="project_name" name="project_name" size="76" required>
+                            </br>
+
+                            <label style="margin-top: 8px;" for="startdate">Start Date</label>
+                            <br>
+
+                            <div class="container1">
+                                <div id="project_startmonth" name="project_startmonth">
+                                    <select id="project_startmonth" name="project_startmonth">
+                                        <option>Month</option>
+                                        <option value="January">January</option>
+                                        <option value="February">February</option>
+                                        <option value="March">March</option>
+                                        <option value="April">April</option>
+                                        <option value="May">May</option>
+                                        <option value="June">June</option>
+                                        <option value="July">July</option>
+                                        <option value="August">August</option>
+                                        <option value="September">September</option>
+                                        <option value="October">October</option>
+                                        <option value="November">November</option>
+                                        <option value="December">December</option>
+                                    </select>
+                                </div>
+    
+                                <div id="project_startyear" name="project_startyear" style="margin-left: 5px;">
+                                    <select id="project_startyear" name="project_startyear">
+                                        <option>Year</option>
+                                        <option value="2000">2000</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <label style="margin-top: 8px;" for="enddate">End Date (or expected)</label>
+                        </br>
+                        <div class="container1">
+                            <div id="project_endmonth" name="project_endmonth">
+                                <select id="project_endmonth" name="project_endmonth">
+                                    <option>Month</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+
+                            <div id="project_endyear" name="project_endyear" style="margin-left: 5px;">
+                                <select id="project_endyear" name="project_endyear">
+                                    <option>Year</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button id="save" data-dismiss="modal" type="submit" style="border-radius: 50px;" onclick="AddProjectsInfo(event);" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Add Education Modal -->
+    <div class="modal fade" id="EducationModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Add Modal Content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Add Education</h4>
+                </div>
+            
+                <div class="modal-body">
+                    <form id="education_form">
+                        <label for="school">School *</label>
+                        </br>
+
+                        <input list="brow" size="76">
+                        <datalist id="brow" size="76">
+                            <option value="Capital University of Science & Technology">
+                            <option value="Quaid-i-Azam University">
+                            <option value="Pakistan Institute of Engineering and Applied Sciences">
+                            <option value="Allama Iqbal Open University">
+                            <option value=" National University of Sciences and Technology">
+                            <option value="National University of Modern Languages">
+                            <option value="National University of Computer and Emerging Sciences">
+                            <option value="Bahria University">
+                            <option value="Sir Syed CASE Institute of Technology">
+                            <option value="Institute of Space Technology">
+                        </datalist>
+
+                        </br>
+                        <label style="margin-top: 8px;" for="degree">Degree </label>
+                        </br>
+                        <input type="text" id="degree" name="degree" size="76">
+                        
+                        </br>
+
+                        <label style="margin-top: 8px;" for="field">Field of Study</label>
+                        </br>
+                        <input type="text" id="field" name="field" size="76">
+
+                        <label style="margin-top: 8px;" for="startdate">Start Date</label>
+                        <br>
+
+                        <div class="container1">
+                            <div id="startmonth" name="startmonth">
+                                <select id="startmonth" name="startmonth">
+                                    <option>Month</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+
+                            <div id="startyear" name="startyear" style="margin-left: 5px;">
+                                <select id="startyear" name="startyear">
+                                    <option>Year</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label style="margin-top: 8px;" for="enddate">End Date (or expected)</label>
+                        </br>
+                        <div class="container1">
+                            <div id="endmonth" name="endmonth">
+                                <select id="endmonth" name="endmonth">
+                                    <option>Month</option>
+                                    <option value="January">January</option>
+                                    <option value="February">February</option>
+                                    <option value="March">March</option>
+                                    <option value="April">April</option>
+                                    <option value="May">May</option>
+                                    <option value="June">June</option>
+                                    <option value="July">July</option>
+                                    <option value="August">August</option>
+                                    <option value="September">September</option>
+                                    <option value="October">October</option>
+                                    <option value="November">November</option>
+                                    <option value="December">December</option>
+                                </select>
+                            </div>
+
+                            <div id="endyear" name="endyear" style="margin-left: 5px;">
+                                <select id="endyear" name="endyear">
+                                    <option>Year</option>
+                                    <option value="2000">2000</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <label style="margin-top: 8px;" for="grade">Grade</label>
+                        </br>
+                        <input type="text" id="grade" name="grade" size="76">
+                    </form>
+                </div>
+                    
+                <div class="modal-footer">
+                    <button id="save" data-dismiss="modal" type="submit" style="border-radius: 50px;" onclick="AddEducationInfo(event);" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="AddPersonalSection" onclick="Add_Personal_Section()"> Add Personal Info. Section </button>
+    <button type="button" class="AddEducationSection" onclick="Add_Education_Section()"> Add Education Section </button>
+    <button type="button" class="AddExperienceSection" onclick="Add_Experience_Section()"> Add Experience Section </button>
+    <button type="button" class="AddSkillsSection" onclick="Add_Skills_Section()"> Add Skills Section </button>
+    <button type="button" class="AddProjectsSection" onclick="Add_Projects_Section()"> Add Projects Section </button>
+
+    <div class="background" id="personal_sec_background">
+        <p class="personalinfo"> Personal Information <button type="button" class="glyphicon glyphicon-pencil editbutton" title="Edit Personal Information" data-toggle="modal" data-target="#myModalEdit"> </button> <button type="button" class="glyphicon glyphicon-plus addbutton" title="Add Personal Information" Personal Information" data-toggle="modal" data-target="#myModal"> </button> </p>
+        
+        <p class="name_" id="name_"> </p>
+        <p style="margin-left: 80px;">
+            <span id='fullname'></span>
+        </p>
+
+        <p class="dob_" id="dob_"> </p>
+        <p style="margin-left: 80px;">
+            <span id='dob'></span>
+        </p>
+
+        <p class="Email_" id="Email_"> </p>
+        <p style="margin-left: 80px;">
+            <span id='Email'></span>
+        </p>
+
+        <p class="phoneno_" id="phoneno_"> </p>
+        <p style="margin-left: 80px;">
+            <span id='phoneno'></span>
+        </p>
+
+        <p class="Address_" id="Address_"> </p>
+        <p style="margin-left: 80px;"> 
+            <span id='Address'></span>
+        </p>
+    </div>
+
+    <div class="education_section_background" id="education_sec_background">
+        <p class="education"> Education <button type="button" class="glyphicon glyphicon-trash delete_education" title="Delete All Degrees" data-toggle="modal" onclick="Delete_All_Degress()"> </button> <button type="button" class="glyphicon glyphicon-plus addbuttoneducation" title="Add Education" data-toggle="modal" data-target="#EducationModal"> </button> </p>
+    
+        <div id="0"> </div>
+        <div id="1"> </div>
+        <div id="2"> </div>
+    </div>
+
+    <div class="experience_section_background" id="experience_sec_background">
+        <p class="experience"> Experience <button type="button" class="glyphicon glyphicon-trash delete_experience" title="Delete All Experiences" data-toggle="modal" onclick="Delete_All_Experiences()"> </button> <button type="button" class="glyphicon glyphicon-plus addbuttoneducation" title="Add Experience" data-toggle="modal" data-target="#experienceModal"> </button> </p>
+    
+    </div>
+
+    <div class="skills_section_background" id="skills_sec_background">
+        <p class="skills"> Skills <button type="button" class="glyphicon glyphicon-trash delete_skills" title="Delete All Skills" data-toggle="modal" onclick="Delete_All_Skills()"> </button> <button type="button" class="glyphicon glyphicon-plus addbuttoneducation" title="Add Skills" data-toggle="modal" data-target="#skillsModal"> </button> </p>
+    
+    </div>
+
+    <div class="projects_section_background" id="projects_sec_background">
+        <p class="projects"> Projects <button type="button" class="glyphicon glyphicon-trash delete_projects" title="Delete All Projects" data-toggle="modal" onclick="Delete_All_Projects()"> </button> <button type="button" class="glyphicon glyphicon-plus addbuttoneducation" title="Add Projects" data-toggle="modal" data-target="#projectsModal"> </button> </p>
+    
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">&nbsp;</div>
+            <div class="col-md-4">
+                <div class="image_area">
+                    <form method="post">
+                        <label for="upload_image">
+                            <img src="upload/user.png" id="uploaded_image" class="img-responsive img-circle" />
+                            <div class="overlay">
+                                <div class="text">Click to Change Profile Image</div>
+                            </div>
+                            <input type="file" name="image" class="image" id="upload_image" style="display:none" />
+                        </label>
+                    </form>
+                </div>
+                
+            </div>
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Crop Image Before Upload</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="img-container">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <img src="" id="sample_image" />
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="preview"></div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" id="crop" class="btn btn-primary">Crop</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      </div>
+                </div>
+              </div>
+        </div>			
+    </div>
+</body>
+</html>
+
+<script>
+    var call = -1;
+
+    function AddProjectsInfo(e)
+    {
+        e.preventDefault();
+        var output_info = document.getElementById("projects_form");
+
+        var data = output_info.querySelectorAll("input:not([type=submit]), select");
+
+        var project_name_p = document.createElement("p");
+        project_name_p.style.marginLeft = "80px";
+        project_name_p.className += "project_name";
+        document.getElementById("projects_section_background").appendChild(project_name_p);
+        var project_name_span = document.createElement("span");
+        project_name_span.setAttribute("id", "project_name");
+        project_name_p.appendChild(project_name_span);
+
+        var p_start_end_dates_p = document.createElement("p");
+        p_start_end_dates_p.style.marginLeft = "80px";
+        document.getElementById("projects_section_background").appendChild(p_start_end_dates_p);
+        var p_start_end_dates_span = document.createElement("span");
+        p_start_end_dates_span.setAttribute("id", "p_start_end_dates");
+        p_start_end_dates_p.appendChild(p_start_end_dates_span);
+
+        var project_name = document.getElementById("project_name");
+        var p_start_end_dates = document.getElementById("p_start_end_dates");
+
+        project_name.innerHTML += data[0].value + "<br>";
+        p_start_end_dates.innerHTML += data[1].value + " " + data[2].value + " - " + data[3].value + " " + data[4].value + "<hr>";
+    }
+    function AddSkillsInfo(e)
+    {
+        e.preventDefault();
+        var output_info = document.getElementById("skills_form");
+
+        var skill_p = document.createElement("p");
+        skill_p.className += "skill_name";
+        skill_p.style.marginLeft = "80px";
+        document.getElementById("skills_section_background").appendChild(skill_p);
+        var skill_span = document.createElement("span");
+        skill_span.setAttribute("id", "skill_name");
+        skill_p.appendChild(skill_span);
+
+        var skill_name = document.getElementById("skill_name");
+
+        var data = output_info.querySelectorAll("input:not([type=submit]), select");
+
+        window.alert(data[0].value);
+        skill_name.innerHTML += data[0].value + "<br>";
+    }
+    function AddExperienceInfo(e)
+    {
+        e.preventDefault();
+        var output_info = document.getElementById("experience_form");
+
+        var title_p = document.createElement("p");
+        title_p.className += "title";
+        title_p.style.marginLeft = "80px";
+        document.getElementById("experience_section_background").appendChild(title_p);
+        var title_span = document.createElement("span");
+        title_span.setAttribute("id", "title");
+        title_p.appendChild(title_span);
+
+        var emp_p = document.createElement("p");
+        emp_p.style.marginLeft = "80px";
+        document.getElementById("experience_section_background").appendChild(emp_p);
+        var emp_span = document.createElement("span");
+        emp_span.setAttribute("id", "emp");
+        emp_p.appendChild(emp_span);
+
+        var emp_start_end_dates_p = document.createElement("p");
+        emp_start_end_dates_p.style.marginLeft = "80px";
+        divsion.appendChild(emp_start_end_dates_p);
+        var emp_start_end_dates_span = document.createElement("span");
+        emp_start_end_dates_span.setAttribute("id", "emp_start_end_dates");
+        emp_start_end_dates_p.appendChild(emp_start_end_dates_span);
+
+        var title = document.getElementById("title");
+        var emp = document.getElementById("emp");
+        var emp_start_end_dates = document.getElementById("emp_start_end_dates");
+
+        var data = output_info.querySelectorAll("input:not([type=submit]), select");
+
+        title.innerHTML += data[0].value + "<br>";
+        emp.innerHTML += data[2].value + " . " + data[1].value + "<br>";
+        emp_start_end_dates.innerHTML += data[4].value + " " + data[5].value + " - " + data[6].value + " " + data[7].value + "<br>" + "<br>";
+    }
+    function AddEducationInfo(e)
+    {
+        call = call + 1;
+
+        e.preventDefault();
+        var output_info = document.getElementById("education_form");
+
+        var divsion = document.getElementById(call);
+
+        var institute_name_p = document.createElement("p");
+        institute_name_p.className += "institute_name";
+        institute_name_p.style.marginLeft = "80px";
+        divsion.appendChild(institute_name_p);
+        var institute_name_span = document.createElement("span");
+        institute_name_span.setAttribute("id", "institute_name");
+        institute_name_p.appendChild(institute_name_span);
+
+        var degree_field_grade_p = document.createElement("p");
+        degree_field_grade_p.style.marginLeft = "80px";
+        divsion.appendChild(degree_field_grade_p);
+        var degree_field_grade_span = document.createElement("span");
+        degree_field_grade_span.setAttribute("id", "degree_field_grade");
+        degree_field_grade_p.appendChild(degree_field_grade_span);
+
+        var start_end_dates_p = document.createElement("p");
+        start_end_dates_p.style.marginLeft = "80px";
+        divsion.appendChild(start_end_dates_p);
+        var start_end_dates_span = document.createElement("span");
+        start_end_dates_span.setAttribute("id", "start_end_dates");
+        start_end_dates_p.appendChild(start_end_dates_span);
+
+        var institute_name = document.getElementById("institute_name");
+        var degree_field_grade = document.getElementById("degree_field_grade");
+        var start_end_dates = document.getElementById("start_end_dates");
+
+        var data = output_info.querySelectorAll("input:not([type=submit]), select");
+
+        institute_name.innerHTML += data[0].value + "<br>";
+        degree_field_grade.innerHTML += data[1].value + ", " + data[2].value + ", " + data[7].value + "<br>";
+        start_end_dates.innerHTML += data[3].value + " " + data[4].value + " - " + data[5].value + " " + data[6].value + "<br>" + "<br>";
+    }
+    function AddDetails(e)
+    {
+        e.preventDefault();
+        var output_info = document.getElementById("personal_information_form");
+        var fullname = document.getElementById("fullname");
+        var dob = document.getElementById("dob");
+        var Email = document.getElementById("Email");
+        var phoneno = document.getElementById("phoneno");
+        var Address = document.getElementById("Address");
+
+        var name_ = document.getElementById("name_");
+        var dob_ = document.getElementById("dob_");
+        var Email_ = document.getElementById("Email_");
+        var phoneno_ = document.getElementById("phoneno_");
+        var Address_ = document.getElementById("Address_");
+
+        var data = output_info.querySelectorAll("input:not([type=submit]), select");
+
+        name_.innerHTML += "Name";
+        fullname.innerHTML += data[0].value + " " + data[1].value + "<hr>";
+
+        var name_hide_btn = document.createElement("BUTTON");
+        var name_show_btn = document.createElement("BUTTON");
+
+        name_hide_btn.id = "name_hide";
+        name_hide_btn.setAttribute('onclick','Hide_Name()');
+        name_show_btn.id = "name_show";
+        name_show_btn.setAttribute('onclick','Show_Name()');
+
+        name_hide_btn.innerHTML = "Hide";
+        name_show_btn.innerHTML = "Show";
+
+        name_.appendChild(name_show_btn);
+        name_.appendChild(name_hide_btn);
+
+        document.getElementById("name_show").style.marginLeft = "535px";
+        document.getElementById("name_hide").style.marginLeft = "5px";
+
+        document.getElementById("edit_firstname").setAttribute("value", data[0].value);
+        document.getElementById("edit_lastname").setAttribute("value", data[1].value);
+
+        dob_.innerHTML += "D.O.B";
+        dob.innerHTML += data[2].value + "<hr>";
+
+        var dob_hide_btn = document.createElement("BUTTON");
+        var dob_show_btn = document.createElement("BUTTON");
+
+        dob_hide_btn.id = "dob_hide";
+        dob_hide_btn.setAttribute('onclick','Hide_DOB()');
+        dob_show_btn.id = "dob_show";
+        dob_show_btn.setAttribute('onclick','Show_DOB()');
+
+        dob_hide_btn.innerHTML = "Hide";
+        dob_show_btn.innerHTML = "Show";
+
+        dob_.appendChild(dob_show_btn);
+        dob_.appendChild(dob_hide_btn);
+
+        document.getElementById("dob_show").style.marginLeft = "535px";
+        document.getElementById("dob_hide").style.marginLeft = "5px";
+        
+        document.getElementById("edit_dateofbirth").setAttribute("value", data[2].value);
+
+        Email_.innerHTML += "Email";
+        Email.innerHTML += data[3].value + "<hr>";
+
+        var Email_hide_btn = document.createElement("BUTTON");
+        var Email_show_btn = document.createElement("BUTTON");
+
+        Email_hide_btn.id = "Email_hide";
+        Email_hide_btn.setAttribute('onclick','Hide_Email()');
+        Email_show_btn.id = "Email_show";
+        Email_show_btn.setAttribute('onclick','Show_Email()');
+
+        Email_hide_btn.innerHTML = "Hide";
+        Email_show_btn.innerHTML = "Show";
+
+        Email_.appendChild(Email_show_btn);
+        Email_.appendChild(Email_hide_btn);
+
+        document.getElementById("Email_show").style.marginLeft = "535px";
+        document.getElementById("Email_hide").style.marginLeft = "5px";
+
+        document.getElementById("edit_email").setAttribute("value", data[3].value);
+
+        phoneno_.innerHTML += "Phone Number";
+        phoneno.innerHTML += data[4].value + "<hr>";
+
+        var phoneno_hide_btn = document.createElement("BUTTON");
+        var phoneno_show_btn = document.createElement("BUTTON");
+
+        phoneno_hide_btn.id = "phoneno_hide";
+        phoneno_hide_btn.setAttribute('onclick','Hide_PhoneNo()');
+        phoneno_show_btn.id = "phoneno_show";
+        phoneno_show_btn.setAttribute('onclick','Show_PhoneNo()');
+
+        phoneno_hide_btn.innerHTML = "Hide";
+        phoneno_show_btn.innerHTML = "Show";
+
+        phoneno_.appendChild(phoneno_show_btn);
+        phoneno_.appendChild(phoneno_hide_btn);
+
+        document.getElementById("phoneno_show").style.marginLeft = "470px";
+        document.getElementById("phoneno_hide").style.marginLeft = "5px";
+
+        document.getElementById("edit_phone").setAttribute("value", data[4].value);
+
+        Address_.innerHTML += "Address";
+        Address.innerHTML += data[5].value;
+
+        var Address_hide_btn = document.createElement("BUTTON");
+        var Address_show_btn = document.createElement("BUTTON");
+
+        Address_hide_btn.id = "Address_hide";
+        Address_show_btn.id = "Address_show";
+
+        Address_hide_btn.innerHTML = "Hide";
+        Address_hide_btn.setAttribute('onclick','Hide_Address()');
+        Address_show_btn.innerHTML = "Show";
+        Address_show_btn.setAttribute('onclick','Show_Address()');
+
+        Address_.appendChild(Address_show_btn);
+        Address_.appendChild(Address_hide_btn);
+
+        document.getElementById("Address_show").style.marginLeft = "518px";
+        document.getElementById("Address_hide").style.marginLeft = "5px";
+
+        document.getElementById("edit_address").setAttribute("value", data[5].value);
+    }
+    function EditDetails(e)
+    {
+        e.preventDefault();
+        var output_info = document.getElementById("edit_personal_information_form");
+
+        var fullname = document.getElementById("fullname");
+        var dob = document.getElementById("dob");
+        var Email = document.getElementById("Email");
+        var phoneno = document.getElementById("phoneno");
+        var Address = document.getElementById("Address");
+
+        var data = output_info.querySelectorAll("input:not([type=submit]), select");
+
+        fullname.innerHTML = data[0].value + " " + data[1].value + "<hr>";
+
+        dob.innerHTML = data[2].value + "<hr>";
+
+        Email.innerHTML = data[3].value + "<hr>";
+
+        phoneno.innerHTML = data[4].value + "<hr>";
+
+        Address.innerHTML = data[5].value;
+    }
+    function Hide_Name() {
+        document.getElementById("fullname").style.visibility = "hidden";
+    }
+    function Show_Name() {
+        document.getElementById("fullname").style.visibility = "visible";
+    }
+
+    function Hide_DOB() {
+        document.getElementById("dob").style.visibility = "hidden";
+    }
+    function Show_DOB() {
+        document.getElementById("dob").style.visibility = "visible";
+    }
+
+    function Hide_Email() {
+        document.getElementById("Email").style.visibility = "hidden";
+    }
+    function Show_Email() {
+        document.getElementById("Email").style.visibility = "visible";
+    }
+
+    function Hide_PhoneNo() {
+        document.getElementById("phoneno").style.visibility = "hidden";
+    }
+    function Show_PhoneNo() {
+        document.getElementById("phoneno").style.visibility = "visible";
+    }
+
+    function Hide_Address() {
+        document.getElementById("Address").style.visibility = "hidden";
+    }
+    function Show_Address() {
+        document.getElementById("Address").style.visibility = "visible";
+    }
+
+    function Hide_All_Section() {
+        document.getElementById("personal_sec_background").style.visibility = "hidden";
+        document.getElementById("education_sec_background").style.visibility = "hidden";
+        document.getElementById("experience_sec_background").style.visibility = "hidden";
+        document.getElementById("skills_sec_background").style.visibility = "hidden";
+        document.getElementById("projects_sec_background").style.visibility = "hidden";
+    }
+    function Add_Personal_Section() {
+        document.getElementById("personal_sec_background").style.visibility = "visible";
+    }
+    function Add_Education_Section() {
+        document.getElementById("education_sec_background").style.visibility = "visible";
+    }
+    function Add_Experience_Section() {
+        document.getElementById("experience_sec_background").style.visibility = "visible";
+    }
+    function Add_Skills_Section() {
+        document.getElementById("skills_sec_background").style.visibility = "visible";
+    }
+    function Add_Projects_Section() {
+        document.getElementById("projects_sec_background").style.visibility = "visible";
+    }
+    function Delete_All_Degress() {
+        document.getElementById("education_sec_background").remove();
+    }
+    function Delete_All_Experiences() {
+        document.getElementById("experience_sec_background").remove();
+    }
+    function Delete_All_Skills() {
+        document.getElementById("skills_sec_background").remove();
+    }
+    function Delete_All_Projects() {
+        document.getElementById("projects_sec_background").remove();
+    }
+    $(document).ready(function(){
+
+var $modal = $('#modal');
+
+var image = document.getElementById('sample_image');
+
+var cropper;
+
+$('#upload_image').change(function(event)
+{
+    var files = event.target.files;
+
+    var done = function(url)
+    {
+        image.src = url;
+        $modal.modal('show');
+    };
+
+    if(files && files.length > 0)
+    {
+        reader = new FileReader();
+        reader.onload = function(event)
+        {
+            done(reader.result);
+        };
+        reader.readAsDataURL(files[0]);
+    }
+});
+
+$modal.on('shown.bs.modal', function() {
+    cropper = new Cropper(image, {
+        aspectRatio: 1,
+        viewMode: 3,
+        preview:'.preview'
+    });
+}).on('hidden.bs.modal', function(){
+    cropper.destroy();
+       cropper = null;
+});
+
+$('#crop').click(function(){
+    canvas = cropper.getCroppedCanvas({
+        width:300,
+        height:400
+    });
+
+    canvas.toBlob(function(blob){
+        url = URL.createObjectURL(blob);
+        var reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onloadend = function(){
+            var base64data = reader.result;
+            $.ajax({
+                url:'upload.php',
+                method:'POST',
+                data:{image:base64data},
+                success:function(data)
+                {
+                    $modal.modal('hide');
+                    $('#uploaded_image').attr('src', data);
+                }
+            });
+        };
+    });
+});
+
+});
+</script>

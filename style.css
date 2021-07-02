@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Ubuntu:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+.editbutton
+{
+    border: none;
+    background-color: rgb(252, 249, 255);;
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 460px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.addbutton {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 10px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.editbutton:hover {
+    background-color: rgb(218, 216, 216);
+}
+.addbutton:hover {
+    background-color: rgb(218, 216, 216);
+}
+.addbuttoneducation {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 13px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.addbuttonexperience {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 13px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.addbuttonskills {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 13px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.addbuttonprojects {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 13px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.delete_education {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 560px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.delete_experience {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 550px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.delete_skills {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 605px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.delete_projects {
+    border: none;
+    background-color: rgb(252, 249, 255);
+    border-radius: 50%;
+    margin-top: 0px;
+    margin-left: 575px;
+    font-size: 100%;
+    transition: all ease-in-out 0.002s;
+}
+.delete_education:hover {
+    background-color: rgb(218, 216, 216);
+}
+.addbuttoneducation:hover {
+    background-color: rgb(218, 216, 216);
+}
+.container1 {
+    display: flex;
+    flex-flow: row nowrap; /* Align on the same line */
+}
+
+.background {
+    position: relative;
+    margin-left: 280px;
+    margin-top: 100px;
+    width: 57%;
+    background-color: rgb(252, 249, 255);
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.education_section_background {
+    position: relative;
+    margin-left: 280px;
+    margin-top: 10px;
+    width: 57%;
+    background-color: rgb(252, 249, 255);
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.experience_section_background {
+    position: relative;
+    margin-left: 280px;
+    margin-top: 10px;
+    width: 57%;
+    background-color: rgb(252, 249, 255);
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.skills_section_background {
+    position: relative;
+    margin-left: 280px;
+    margin-top: 10px;
+    width: 57%;
+    background-color: rgb(252, 249, 255);
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.projects_section_background {
+    position: relative;
+    margin-left: 280px;
+    margin-top: 10px;
+    width: 57%;
+    background-color: rgb(252, 249, 255);
+    border-radius: 15px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+.personalinfo{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.education{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.experience{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.skills{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.projects{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.name_{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #0e76a8;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+
+.institute_name {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+.project_name {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+.skill_name {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+.title {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #000000;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+
+.dob_{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #0e76a8;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+
+.phoneno_{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #0e76a8;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+
+.Email_{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #0e76a8;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+
+.Address_{
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: #0e76a8;
+    text-decoration: none;
+    margin-left: 80px;
+    margin-top: 0px;
+}
+
+.AddPersonalSection {
+    position: absolute;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 100px;
+    padding: 9px 15px;
+    background-color: #0e76a8;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button.AddPersonalSection:hover {
+    background-color: rgb(85, 141, 83);
+}
+
+.AddEducationSection {
+    position: absolute;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 150px;
+    padding: 9px 15px;
+    background-color: #0e76a8;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button.AddEducationSection:hover {
+    background-color: rgb(85, 141, 83);
+}
+
+.AddExperienceSection {
+    position: absolute;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 200px;
+    padding: 9px 15px;
+    background-color: #0e76a8;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button.AddExperienceSection:hover {
+    background-color: rgb(85, 141, 83);
+}
+
+.AddSkillsSection {
+    position: absolute;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 250px;
+    padding: 9px 15px;
+    background-color: #0e76a8;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button.AddSkillsSection:hover {
+    background-color: rgb(85, 141, 83);
+}
+
+.AddProjectsSection {
+    position: absolute;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #ecf0f1;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 300px;
+    padding: 9px 15px;
+    background-color: #0e76a8;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+button.AddProjectsSection:hover {
+    background-color: rgb(85, 141, 83);
+}
+select {
+    width: 282px;
+    height: 30px;
+    margin: 10px;
+}
+.image_area {
+    position: relative;
+    width: 100px;
+    left: 2px;
+}
+
+img {
+    display: block;
+    max-width: 50%;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+.preview {
+    overflow: hidden;
+    width: 160px; 
+    height: 160px;
+    margin: 10px;
+    border: 1px solid red;
+}
+
+.modal-lg{
+    max-width: 1000px !important;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    height: 0;
+    transition: .5s ease;
+    width: 100%;
+}
+
+.image_area:hover .overlay {
+    height: 50%;
+    cursor: pointer;
+}
+
+.text {
+    color: #333;
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
